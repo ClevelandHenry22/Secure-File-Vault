@@ -1,3 +1,4 @@
+
 # 🔐 SecureFileVault  
 ### Advanced File Encryption Tool (Python + Cryptography)
 
@@ -136,3 +137,4 @@ This ensures **confidentiality + integrity** of your data.
 
 **Cleveland Henry Lore**  
 Cybersecurity | Penetration Testing | Blue Team Ops | Python Security Tools  
+
