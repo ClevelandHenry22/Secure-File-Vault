@@ -3,7 +3,7 @@
 ### Advanced File Encryption Tool (Python + Cryptography)
 
 SecureFileVault is a **professional file & directory encryption tool** built using the Python `cryptography` library (Fernet AES-128).  
-It is designed as a **real-world cybersecurity project** that demonstrates:
+It is designed to look and function as a **real-world cybersecurity project** that demonstrates:
 
 -  Strong Encryption  
 -  Secure Key Management  
@@ -16,6 +16,20 @@ It is designed as a **real-world cybersecurity project** that demonstrates:
 This tool is useful for **blue-team ops, secure data handling, forensics environments, and personal security**.
 
 ---
+
+### **What Is Encryption?**
+
+*Encryption transforms readable data (plaintext) into unreadable data (ciphertext) using a secret key.*
+*Only someone with the correct key can decrypt it.*
+
+Fernet encryption (used in this project) provides:
+
+-AES-128 encryption: Encrypts files using a strong 128-bit key to keep data confidential.
+-HMAC for integrity verification: Ensures the file has not been altered by generating a secure hash.
+-Protection against tampering: Detects and blocks any unauthorized changes to encrypted files.
+-Timestamp-based tokens: Adds time-limited token to prevent reuse of old or expired access requests.
+
+This means **your data will stay confidential, verified, and safe**.
 
 #  Features
 
@@ -35,10 +49,10 @@ Decrypt every `.enc` file recursively.
 Create strong Fernet keys & store them safely.
 
 ###  Key Rotation  
-Rotate keys without breaking the application.
+Change keys without breaking the encrypted files.
 
 ###  Detailed Logging & Error Handling  
-Made for real-world use cases.
+For real use cases.
 
 
 
@@ -49,13 +63,19 @@ git clone https://github.com/YOUR_USERNAME/SecureFileVault.git
 cd SecureFileVault
 pip install cryptography
 ```
+>**Kali Linux Note**
+>If `cryptography` is already installed, you're good to go.
 
 ---
 
-#  Usage
+#  Usage Guide
+*Below are the main commands and what they do.*
+
+---
 
 ###  Generate a new key
-```bash
+
+```
 python secure_file_vault.py --generate-key --key-file vault.key
 ```
 
