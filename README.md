@@ -3,7 +3,7 @@
 ### Advanced File Encryption Tool (Python + Cryptography)
 
 SecureFileVault is a **professional file & directory encryption tool** built using the Python `cryptography` library (Fernet AES-128).  
-It is designed to look and function as a **real-world cybersecurity project** that demonstrates:
+It is designed to look and function as a project that demonstrates:
 
 -  Strong Encryption  
 -  Secure Key Management  
@@ -63,7 +63,7 @@ git clone https://github.com/YOUR_USERNAME/SecureFileVault.git
 cd SecureFileVault
 pip install cryptography
 ```
->**Kali Linux Note**
+>**Kali Linux Note:**
 >If `cryptography` is already installed, you're good to go.
 
 ---
@@ -78,13 +78,16 @@ pip install cryptography
 ```
 python secure_file_vault.py --generate-key --key-file vault.key
 ```
-
+*Creates a brand-new Fernet key and stores it safely in `vault.key`.
 ---
 
 ###  Encrypt a file
-```bash
+```
 python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file vault.key
 ```
+-*Reads the original file*
+-*Encrypts it*
+-*Saves encrypted output as `.enc`
 
 ---
 
@@ -92,6 +95,7 @@ python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file 
 ```bash
 python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file vault.key
 ```
+*Restores the file to its original readable form.
 
 ---
 
@@ -99,6 +103,7 @@ python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file 
 ```bash
 python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 ```
+*Encrypts every file inside `myfolder`.
 
 ---
 
@@ -106,6 +111,7 @@ python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 ```bash
 python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 ```
+*Decrypts all encrypted files.*
 
 ---
 
@@ -113,6 +119,7 @@ python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 ```bash
 python secure_file_vault.py --rotate-key --key-file vault.key
 ```
+*Generates a new key and updates the old one securely.*
 
 ---
 
