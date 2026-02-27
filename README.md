@@ -93,7 +93,7 @@ python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file 
 
 -*Encrypts it*
 
--*Saves encrypted output as `.enc`
+-*Saves encrypted output as `.enc`*
 
 ---
 
