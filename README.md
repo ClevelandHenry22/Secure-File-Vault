@@ -212,8 +212,7 @@ python Secure_File_Vault.py --rotate-key --key-file vault.key
 - Do NOT upload the key to GitHub  
 - Rotate keys periodically  
 - Delete original unencrypted files after encryption  
-- For forensic-level deletion, use tools like:  
-  - `shred`, `srm`, `wipe`
+
 
 ---
 
