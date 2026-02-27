@@ -82,6 +82,9 @@ pip install cryptography
 ```
 python secure_file_vault.py --generate-key --key-file vault.key
 ```
+
+![Key generation command](docs/screenshots/key_generation.png)
+
 -*Creates a brand-new Fernet Key and stores it safely in `vault.key`.*
 
 ---
@@ -104,6 +107,10 @@ python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file 
 ```
 -*Restores the file to its original readable form*.
 
+![File encryption decryption](docs/screenshots/file-encryption-decryption.png)
+
+![contents of encrypted and decrypted file](docs/screenshots/file-encr-decr-content.png)
+
 ---
 
 ###  Encrypt a whole directory
@@ -119,6 +126,10 @@ python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 ```
 -*Decrypts all encrypted files.*
+
+![Directory encryption decryption](docs/screenshots/directory-encrypt-decrypt)
+
+![Encrypted files in the folder](docs/screenshots/enc_files_in_folder.png)
 
 ---
 
