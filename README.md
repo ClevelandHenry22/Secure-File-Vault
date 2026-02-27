@@ -101,7 +101,7 @@ Before using SecureFileVault, you must create the main Python script that contai
 
 ###  Generate a new key
 
--**Make sure you are in the Secure-File-Vault directory
+-**Make sure you are in the Secure-File-Vault directory**
 ```
 python Secure_File_Vault.py --generate-key --key-file vault.key
 ```
