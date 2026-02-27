@@ -82,8 +82,8 @@ pip install cryptography
 ```
 python secure_file_vault.py --generate-key --key-file vault.key
 ```
+-*Creates a brand-new Fernet Key and stores it safely in `vault.key`.*
 
--*Creates a brand-new Fernet key and stores it safely in `vault.key`*.
 ---
 
 ###  Encrypt a file
