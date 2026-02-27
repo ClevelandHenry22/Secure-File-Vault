@@ -25,8 +25,11 @@ This tool is useful for **blue-team ops, secure data handling, forensics environ
 Fernet encryption (used in this project) provides:
 
 -AES-128 encryption: Encrypts files using a strong 128-bit key to keep data confidential.
+
 -HMAC for integrity verification: Ensures the file has not been altered by generating a secure hash.
+
 -Protection against tampering: Detects and blocks any unauthorized changes to encrypted files.
+
 -Timestamp-based tokens: Adds time-limited token to prevent reuse of old or expired access requests.
 
 This means **your data will stay confidential, verified, and safe**.
