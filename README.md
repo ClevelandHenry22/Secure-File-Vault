@@ -1,5 +1,5 @@
 
-#  SecureFileVault  
+#  Secure_File_Vault  
 
 ### Advanced File Encryption Tool (Python + Cryptography)
 
@@ -109,6 +109,8 @@ python Secure_File_Vault.py --generate-key --key-file vault.key
 ![Key generation command](docs/screenshots/key_generation.png)
 
 -*Creates a brand-new Fernet Key and stores it safely in `vault.key`.*
+-*This key is the “secret” that protects all encrypted files.*
+-*Anyone with this key can decrypt your data — so it must remain private.*
 
 ---
 
@@ -132,7 +134,27 @@ python Secure_File_Vault.py --decrypt secret.enc --output secret.txt --key-file 
 
 ![File encryption decryption](docs/screenshots/file-encryption-decryption.png)
 
+-*This screenshot shows the encrypted version of the file.*
+
+-*After running the encryption command, the original readable text was transformed into a long block of random-looking characters.*
+
+-*These characters are Fernet tokens, which include*: **AES-128 encrypted data, HMAC authentication hash, and Timestamp.**
+
+**The original content is no longer visible or readable, proving that encryption succeeded and confidentiality is preserved**.
+
 ![contents of encrypted and decrypted file](docs/screenshots/file-encr-decr-content.png)
+
+-*This screenshot shows the successful decryption process.*
+
+-*The encrypted .enc file was fully restored back to its original plaintext form using the same Fernet key*.
+
+-*The decrypted content matches the original data exactly, proving that*:
+
+***The key was correct***
+
+***The encrypted file wasn't tampered with***
+
+***Integrity and confidentiality were both maintained***
 
 ---
 
@@ -152,6 +174,11 @@ python Secure_File_Vault.py --decrypt-dir myfolder --key-file vault.key
 
 ![Directory encryption decryption](docs/screenshots/directory-encrypt-decrypt)
 
+-*This image shows the tool decrypting each encrypted file in the directory.
+All .enc files were processed and restored back to their readable versions.*
+
+-*This confirms that SecureFileVault handles bulk decryption just as smoothly as encryption.*
+
 ![Encrypted files in the folder](docs/screenshots/enc_files_in_folder.png)
 
 ---
@@ -161,6 +188,10 @@ python Secure_File_Vault.py --decrypt-dir myfolder --key-file vault.key
 python Secure_File_Vault.py --rotate-key --key-file vault.key
 ```
 -*Generates a new key and updates the old one securely.*
+
+-*The tool creates a new Fernet key and updates the existing vault.key.*
+
+-*Key rotation improves security by limiting how long any single key is used.*
 
 ---
 
