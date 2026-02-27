@@ -1,5 +1,6 @@
 
 #  SecureFileVault  
+
 ### Advanced File Encryption Tool (Python + Cryptography)
 
 SecureFileVault is a **professional file & directory encryption tool** built using the Python `cryptography` library (Fernet AES-128).  
@@ -13,7 +14,7 @@ It is designed to look and function as a project that demonstrates:
 -  Error Handling & Validation  
 -  Clean, Clear, Well-Commented Code  
 
-This tool is useful for **blue-team ops, secure data handling, forensics environments, and personal security**.
+This tool is useful for **blue-team operations, secure data handling, forensics environments, and personal security**.
 
 ---
 
@@ -22,15 +23,15 @@ This tool is useful for **blue-team ops, secure data handling, forensics environ
 *Encryption transforms readable data (plaintext) into unreadable data (ciphertext) using a secret key.*
 *Only someone with the correct key can decrypt it.*
 
-Fernet encryption (used in this project) provides:
+**Fernet encryption (used in this project) provides**:
 
--AES-128 encryption: Encrypts files using a strong 128-bit key to keep data confidential.
+-**AES-128 encryption**: Encrypts files using a strong 128-bit key to keep data confidential.
 
--HMAC for integrity verification: Ensures the file has not been altered by generating a secure hash.
+-**HMAC for integrity verification**: Ensures the file has not been altered by generating a secure hash.
 
--Protection against tampering: Detects and blocks any unauthorized changes to encrypted files.
+-**Protection against tampering**: Detects and blocks any unauthorized changes to encrypted files.
 
--Timestamp-based tokens: Adds time-limited token to prevent reuse of old or expired access requests.
+-**Timestamp-based tokens**: Adds time-limited token to prevent reuse of old or expired access requests.
 
 This means **your data will stay confidential, verified, and safe**.
 
@@ -81,7 +82,7 @@ pip install cryptography
 ```
 python secure_file_vault.py --generate-key --key-file vault.key
 ```
-*Creates a brand-new Fernet key and stores it safely in `vault.key`.
+-*Creates a brand-new Fernet key and stores it safely in `vault.key`*.
 ---
 
 ###  Encrypt a file
@@ -89,7 +90,9 @@ python secure_file_vault.py --generate-key --key-file vault.key
 python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file vault.key
 ```
 -*Reads the original file*
+
 -*Encrypts it*
+
 -*Saves encrypted output as `.enc`
 
 ---
@@ -98,7 +101,7 @@ python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file 
 ```bash
 python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file vault.key
 ```
-*Restores the file to its original readable form.
+-*Restores the file to its original readable form*.
 
 ---
 
@@ -106,7 +109,7 @@ python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file 
 ```bash
 python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 ```
-*Encrypts every file inside `myfolder`.
+-*Encrypts every file inside `myfolder`*.
 
 ---
 
@@ -114,7 +117,7 @@ python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 ```bash
 python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 ```
-*Decrypts all encrypted files.*
+-*Decrypts all encrypted files.*
 
 ---
 
@@ -122,22 +125,7 @@ python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 ```bash
 python secure_file_vault.py --rotate-key --key-file vault.key
 ```
-*Generates a new key and updates the old one securely.*
-
----
-
-#  How Encryption Works (Simplified)
-
-SecureFileVault uses **Fernet** from the Python `cryptography` library.
-
-Fernet guarantees:
-
-- AES-128 encryption  
-- HMAC authentication  
-- Timestamped tokens  
-- No silent corruption  
-
-This ensures **confidentiality + integrity** of your data.
+-*Generates a new key and updates the old one securely.*
 
 ---
 
