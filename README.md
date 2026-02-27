@@ -70,6 +70,28 @@ pip install cryptography
 >**Kali Linux Note:**
 >If `cryptography` is already installed, you're good to go.
 
+## Creating the `Secure_file_vault.py` Script (Kali Linux)
+
+Before using SecureFileVault, you must create the main Python script that contains all encryption and decryption logic.
+
+**Steps**
+1. *Create a directory named Secure_File_Vault* - `mkdir Secure-File_Vault`
+
+2. *Open your project folder* - `cd Secure_File_Vault`
+
+3. *Create a python script using nano* - `nano Secure_File_Vault.py`
+
+4. *Paste the full encryption program code inside this file*
+
+   -[Secure_File_Vault.py](secure_file_vault.py)
+
+6. *Save and exit*
+
+   -**nano**:
+
+      Press `CTRL + O`, ENTER --> then CTRL + X 
+
+7. *Confirm the fiel exists*: `ls`
 ---
 
 #  Usage Guide
@@ -79,8 +101,9 @@ pip install cryptography
 
 ###  Generate a new key
 
+-**Make sure you are in the Secure-File-Vault directory
 ```
-python secure_file_vault.py --generate-key --key-file vault.key
+python Secure_File_Vault.py --generate-key --key-file vault.key
 ```
 
 ![Key generation command](docs/screenshots/key_generation.png)
@@ -91,7 +114,7 @@ python secure_file_vault.py --generate-key --key-file vault.key
 
 ###  Encrypt a file
 ```
-python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file vault.key
+python Secure_File_Vault.py --encrypt secret.txt --output secret.enc --key-file vault.key
 ```
 -*Reads the original file*
 
@@ -103,7 +126,7 @@ python secure_file_vault.py --encrypt secret.txt --output secret.enc --key-file 
 
 ###  Decrypt a file
 ```bash
-python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file vault.key
+python Secure_File_Vault.py --decrypt secret.enc --output secret.txt --key-file vault.key
 ```
 -*Restores the file to its original readable form*.
 
@@ -115,7 +138,7 @@ python secure_file_vault.py --decrypt secret.enc --output secret.txt --key-file 
 
 ###  Encrypt a whole directory
 ```bash
-python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
+python Secure_File_Vault.py --encrypt-dir myfolder --key-file vault.key
 ```
 -*Encrypts every file inside `myfolder`*.
 
@@ -123,7 +146,7 @@ python secure_file_vault.py --encrypt-dir myfolder --key-file vault.key
 
 ###  Decrypt a directory
 ```bash
-python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
+python Secure_File_Vault.py --decrypt-dir myfolder --key-file vault.key
 ```
 -*Decrypts all encrypted files.*
 
@@ -135,7 +158,7 @@ python secure_file_vault.py --decrypt-dir myfolder --key-file vault.key
 
 ###  Rotate encryption key
 ```bash
-python secure_file_vault.py --rotate-key --key-file vault.key
+python Secure_File_Vault.py --rotate-key --key-file vault.key
 ```
 -*Generates a new key and updates the old one securely.*
 
