@@ -195,6 +195,7 @@ python Secure_File_Vault.py --rotate-key --key-file vault.key
 
 ---
 
+
 #  Real-World Use Cases
 
 -  Protecting sensitive logs  
